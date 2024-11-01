@@ -1,0 +1,1 @@
+Short practice project to figure out how to deploy a serverless function to AWS.

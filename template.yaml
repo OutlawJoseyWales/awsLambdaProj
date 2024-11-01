@@ -1,0 +1,17 @@
+Resources:
+  CreditRiskFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: awsLambdaProj.app.handler
+      Runtime: python3.12
+      CodeUri: ./awsLambdaProj/
+      MemorySize: 128
+      Timeout: 10
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        CreditRiskApi:
+          Type: Api
+          Properties:
+            Path: /credit
+            Method: post

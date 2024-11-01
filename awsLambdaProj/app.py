@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, ValidationError
+from mangum import Mangum
 
 app = FastAPI()
 
@@ -21,3 +22,5 @@ async def calculate_credit_risk(request_data: CreditRiskRequest):
 
     except ValidationError as e:
         raise HTTPException(status_code=400, detail=e.errors())
+    
+handler = Mangum(app)

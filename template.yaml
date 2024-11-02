@@ -4,7 +4,7 @@ Resources:
   CreditRiskFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: awsLambdaProj.app.handler
+      Handler: app.handler
       Runtime: python3.12
       CodeUri: ./awsLambdaProj/
       MemorySize: 128
